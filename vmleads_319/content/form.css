@@ -1,0 +1,378 @@
+.vmclear:before,.vmclear:after {content: " "; display: table;}
+.vmclear:after {clear: both;}
+.vmclear {*zoom: 1;}
+.vmform-wrapper{
+color: #fff;
+  font-family: 'Roboto Slab', 'Zilla Slab', serif, archer;
+  font-weight: normal;
+  font-style: normal;
+  line-height: 1;
+  padding:0em;
+  max-width: 100%;
+  margin: 0 auto;
+  position: relative;
+}
+.vmform-wrapper,.vmform-wrapper *{
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.vmform-wrapper .hideloading{
+  display: none;
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  top: 50%;
+  margin-left: -1em;
+  line-height: 30px;
+}
+form.vmform{
+  margin: 0px;
+  /*background: #405F59;*/
+  background-color:#0284A8;
+}
+form.vmform fieldset{
+  border: solid 1px #ddd;
+  padding: 1em;
+  margin: 1em 0;
+}
+form.vmform fieldset legend{
+  font-weight: bold;
+  background: #FFF;
+  padding: 0 0.25em;
+  margin: 0;
+  margin-left: -0.1875em;
+}
+form.vmform label{
+  font-size: 1em;
+  color: #fff;
+  cursor: normal;
+  display: block;
+  font-weight: 500;
+  margin-bottom: 0.25em
+}
+form.vmform label.field_name em{
+  line-height: 0.87em;
+  margin-right: .2em;
+  margin-left: .2em;
+  font-size: 1em;
+}
+.requiredmark{
+  color: #fc321c;
+}
+form.vmform label.field_name em.tooltipmark{}
+form.vmform label.radio_label{
+  /* float: left; */
+  display: inline;
+  line-height: 3.274em;
+  padding-right: 1em;
+}
+form.vmform input[type="text"],form.vmform textarea,form.vmform select{
+  border: 1px solid hsl(0, 0%, 80%);
+  color: hsla(0, 0%, 0%, 0.75);
+  display: block;
+  font-size: 0.875em;
+  margin: 0 0 0.875em 0;
+  padding: 3px;
+  height: 2.4em;
+  width: 100%;
+  box-sizing: border-box;
+  border-radius: 0;
+}
+form.vmform textarea{
+  background-color: #FFF;
+  font-family: inherit;
+  border: 1px solid #CCC;
+  color: hsla(0, 0%, 0%, 0.75);
+  display: block;
+  font-size: 0.875em;
+  margin: 0 0 0.875em 0;
+  padding: 0.4375em;
+  height: 50px;
+  width: 100%;
+}
+form.vmform .button{
+  padding: 5px 15px;
+  background-color: #333;
+  background-image: none;
+  font-size: 0.8125em;
+  color: #FFF;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  font-weight: bold;
+  line-height: 1;
+  margin: 0 0 1.25em;
+  position: relative;
+  text-decoration: none;
+  text-align: center;
+}
+form.vmform .button:hover{
+  background-color: #4B8CF7;
+}
+form.vmform .small{
+  padding-top: 0.625em;
+  padding-bottom: 0.5625em;
+}
+form.vmform div.push-bottom{
+  margin-bottom: 0.8em;
+}
+form.vmform small.error{
+  display: block;
+  padding: 0.375em 0.25em;
+  margin-top: -0.875em;
+  margin-bottom: 0.875em;
+  font-size: 0.75em;
+  font-weight: bold;
+  background: #77090b;
+  color: white;
+}
+form.vmform input.error,form.vmform textarea.error{
+  border-color: #77090b;
+  background-color: rgba(198, 15, 19, 0.1);
+}
+form.vmform select.error{
+  border-color: #77090b;
+}
+div.info-box{
+  margin-bottom: 0.875em;
+  padding: 0.4em;
+  font-size: 0.875em;
+  color: white;
+}
+div.info-box.success{
+  background-color: #5da423;
+  border-color: #457a1a;
+}
+div.info-box.error{
+  background-color: #77090b;
+  border-color: #970b0e;
+}
+div.info-box.warning{
+  background-color: #2ba6cb;
+  border-color: #2284a1;
+}
+div.info-box h4{
+  margin:0 0 5px 0;
+  color: white;
+}
+form.vmform .hidden{
+  display: none;
+}
+form.vmform .date-3-box{
+  display: inline-block;
+  width: 100%;
+}
+form.vmform .date-3 select{
+  width: 32%;
+  margin-right: 2%;
+  float: left;
+}
+form.vmform .date-3 select:last-child, form.vmform .date-3 select.select-date-3-y{
+  margin-right: 0;
+}
+
+#vmtooltip {position:absolute; display:block; padding:3px 10px; background:#666; color:#FFF;z-index: 10000;}
+
+.icon-required {  }
+.icon-tooltip {
+  background: url('tooltip.png') no-repeat;
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  width: 12px;
+  height: 12px;
+}
+
+.pika-single {
+    z-index: 9999;
+    display: block;
+    position: relative;
+    color: #333;
+    background: #fff;
+    border: 1px solid #ccc;
+    border-bottom-color: #bbb;
+    font-family: 'Roboto Slab', 'Zilla Slab', serif, archer;
+}
+
+/*
+clear child float (pika-lendar), using the famous micro clearfix hack
+http://nicolasgallagher.com/micro-clearfix-hack/
+*/
+.pika-single:before,
+.pika-single:after {
+    content: " ";
+    display: table;
+}
+.pika-single:after { clear: both }
+.pika-single { *zoom: 1 }
+
+.pika-single.is-hidden {
+    display: none;
+}
+
+.pika-single.is-bound {
+    position: absolute;
+    box-shadow: 0 5px 15px -5px rgba(0,0,0,.5);
+}
+
+.pika-lendar {
+    float: left;
+    width: 240px;
+    margin: 8px;
+}
+
+.pika-title {
+    position: relative;
+    text-align: center;
+}
+
+.pika-label {
+    display: inline-block;
+    *display: inline;
+    position: relative;
+    z-index: 9999;
+    overflow: hidden;
+    margin: 0;
+    padding: 5px 3px;
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: bold;
+    background-color: #fff;
+    width: 90px;
+}
+.pika-label.pika-year{
+    width: 60px;
+}
+.pika-title select {
+    cursor: pointer;
+    position: absolute;
+    z-index: 9998;
+    margin: 0;
+    left: 0;
+    top: 5px;
+    width: 100%;
+   /* filter: alpha(opacity=0);
+    opacity: 0;*/
+}
+
+.pika-prev,
+.pika-next {
+    display: block;
+    cursor: pointer;
+    position: relative;
+    outline: none;
+    border: 0;
+    padding: 0;
+    width: 20px;
+    height: 30px;
+    /* hide text using text-indent trick, using width value (it's enough) */
+    text-indent: 20px;
+    white-space: nowrap;
+    overflow: hidden;
+    background-color: transparent;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 75% 75%;
+    opacity: .5;
+    *position: absolute;
+    *top: 0;
+}
+
+.pika-prev:hover,
+.pika-next:hover {
+    opacity: 1;
+}
+
+.pika-prev,
+.is-rtl .pika-next {
+    float: left;
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAeCAYAAAAsEj5rAAAAUklEQVR42u3VMQoAIBADQf8Pgj+OD9hG2CtONJB2ymQkKe0HbwAP0xucDiQWARITIDEBEnMgMQ8S8+AqBIl6kKgHiXqQqAeJepBo/z38J/U0uAHlaBkBl9I4GwAAAABJRU5ErkJggg==');
+    *left: 0;
+}
+
+.pika-next,
+.is-rtl .pika-prev {
+    float: right;
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAeCAYAAAAsEj5rAAAAU0lEQVR42u3VOwoAMAgE0dwfAnNjU26bYkBCFGwfiL9VVWoO+BJ4Gf3gtsEKKoFBNTCoCAYVwaAiGNQGMUHMkjGbgjk2mIONuXo0nC8XnCf1JXgArVIZAQh5TKYAAAAASUVORK5CYII=');
+    *right: 0;
+}
+
+.pika-prev.is-disabled,
+.pika-next.is-disabled {
+    cursor: default;
+    opacity: .2;
+}
+
+.pika-select {
+    display: inline-block;
+    *display: inline;
+}
+
+.pika-table {
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+    border: 0;
+}
+
+.pika-table th,
+.pika-table td {
+    width: 14.285714285714286%;
+    padding: 0;
+}
+
+.pika-table th {
+    color: #999;
+    font-size: 12px;
+    line-height: 25px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.pika-button {
+    cursor: pointer;
+    display: block;
+    outline: none;
+    border: 0;
+    margin: 0;
+    width: 100%;
+    padding: 5px;
+    color: #666;
+    font-size: 12px;
+    line-height: 15px;
+    text-align: right;
+    background: #f5f5f5;
+}
+
+.pika-week {
+    font-size: 11px;
+    color: #999;
+}
+
+.is-today .pika-button {
+    color: #33aaff;
+    font-weight: bold;
+}
+
+.is-selected .pika-button {
+    color: #fff;
+    font-weight: bold;
+    background: #33aaff;
+    box-shadow: inset 0 1px 3px #178fe5;
+    border-radius: 3px;
+}
+
+.is-disabled .pika-button {
+    pointer-events: none;
+    cursor: default;
+    color: #999;
+    opacity: .3;
+}
+
+.pika-button:hover {
+    color: #fff !important;
+    background: #ff8000 !important;
+    box-shadow: none !important;
+    border-radius: 3px !important;
+}
